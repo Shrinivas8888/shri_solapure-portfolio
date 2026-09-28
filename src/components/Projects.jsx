@@ -86,7 +86,11 @@ const ProjectCard = ({ project, aosDelay }) => (
             }`}
           >
             <ExternalLinkIcon />
-            {project.links.demo ? 'Live Demo' : 'Demo Coming Soon'}
+            {project.links.demo
+              ? project.links.demo.endsWith('.pdf')
+                ? 'View Lab Report'
+                : 'Live Demo'
+              : 'Coming Soon'}
           </a>
         )}
 
@@ -128,13 +132,13 @@ const Projects = () => {
         {/* Header */}
         <div data-aos="fade-up" className="mb-16 md:mb-20">
           <div className="inline-block border border-white/20 rounded-full px-5 py-1.5 text-sm text-white/60 font-bold mb-8 shadow-sm bg-white/5 backdrop-blur-sm">
-            Featured Projects
+            Projects & Labs
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.1] mb-6 tracking-tight">
-            Work that speaks <br className="hidden md:block" />for itself
+            Networks, Systems <br className="hidden md:block" />& Applications
           </h2>
           <p className="text-white/50 text-base md:text-lg max-w-lg font-medium leading-relaxed">
-            A selection of projects that showcase my expertise in full-stack development and modern architecture.
+            Hands-on lab work in CCNA networking and Linux administration, IoT projects, and full-stack web applications.
           </p>
         </div>
 
